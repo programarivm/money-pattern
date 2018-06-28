@@ -1,5 +1,5 @@
 {
-    "name": "programarivm/protected-money",
+    "name": "programarivm/money-pattern",
     "description": "This is a fork of moneyphp/money that removes the BC Math and GMP functions.",
     "license": "MIT",
     "keywords": ["money", "vo", "value object", "martin", "fowler", "safe"],
