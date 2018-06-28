@@ -1,7 +1,4 @@
-# Protected Money
-
-[![Build Status](https://img.shields.io/travis/programarivm/protected-money.svg?style=flat-square)](https://travis-ci.org/programarivm/protected-money)
-![Money PHP](/resources/logo.png?raw=true)
+# Money Pattern
 
 This is a fork of [moneyphp/money](https://github.com/programarivm/protected-money) that removes the BC Math and GMP functions. The API remains the same as in the [official documentation](http://moneyphp.org/en/latest/).
 
@@ -10,7 +7,7 @@ This is a fork of [moneyphp/money](https://github.com/programarivm/protected-mon
 Via Composer
 
 ```bash
-$ composer require programarivm/protected-money
+$ composer require programarivm/money-pattern
 ```
 
 ## Why Remove the BC Math and the GMP Extensions?
@@ -71,7 +68,7 @@ final class Money implements \JsonSerializable
 }
 ```
 
-In short, BC Math and GMP are encouraged to be installed. However, arbitrary precision arithmetic functions should not be used in common web apps; according to [the least privilege principle](https://programarivm.com/the-least-privilege-principle-applied-to-php-bigints/) those extensions should be installed only if necessary.
+In short, BC Math and GMP are encouraged to be installed, however, arbitrary precision arithmetic functions should not be used in common web apps -- according to [the least privilege principle](https://programarivm.com/the-least-privilege-principle-applied-to-php-bigints/) those extensions should be installed only if necessary.
 
 ## License
 
