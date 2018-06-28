@@ -1,6 +1,6 @@
 {
-    "name": "programarivm/secure-money",
-    "description": "PHP implementation of Fowler's Money pattern. This is a fork of moneyphp/money that removes the BC Math and GMP functions.",
+    "name": "programarivm/protected-money",
+    "description": "PHP implementation of Fowler's Money pattern. This is a fork of moneyphp/money that removes the BC Math and GMP functions to reduce the attack surface of your app.",
     "license": "MIT",
     "keywords": ["money", "vo", "value object", "martin", "fowler", "safe"],
     "authors": [
