@@ -17,7 +17,9 @@ $ composer require programarivm/protected-money
 
 > The short answer: to reduce the attack surface of your app.
 
-`moneyphp/money` assumes that very, very large amounts of money are going to be handled by default. More specifically, the `Money` class internally picks [BC Math](http://php.net/manual/en/book.bc.php) or [GMP](http://php.net/manual/en/book.gmp.php) by default if detecting those PHP extensions, as it is shown next.
+`moneyphp/money` assumes that very huge amounts of money are going to be handled by default, considering that you are bypassing the limit established by `PHP_INT_MAX`.
+
+More specifically, the `Money` class internally picks [BC Math](http://php.net/manual/en/book.bc.php) or [GMP](http://php.net/manual/en/book.gmp.php) by default if detecting those PHP extensions, as it is shown next.
 
 ### `src/Money.php`
 
@@ -71,7 +73,7 @@ final class Money implements \JsonSerializable
 }
 ```
 
-BC Math and GMP are encouraged to be installed. However, arbitrary precision arithmetic functions should not be used in common web apps; according to [the least privilege principle](https://programarivm.com/the-least-privilege-principle-applied-to-php-bigints/) those extensions must be installed on production only if necessary.
+BC Math and GMP are encouraged to be installed. However, arbitrary precision arithmetic functions should not be used in common web apps; according to [the least privilege principle](https://programarivm.com/the-least-privilege-principle-applied-to-php-bigints/) those extensions must be installed only if necessary.
 
 ## License
 
