@@ -1,6 +1,6 @@
 # Money Pattern
 
-This is a fork of [moneyphp/money](https://github.com/programarivm/protected-money) that removes the BC Math and GMP functions. The API remains the same as in the [official documentation](http://moneyphp.org/en/latest/).
+This is a fork of [moneyphp/money](https://github.com/moneyphp/money) that removes the BC Math and GMP functions. The API remains the same as in the [official documentation](http://moneyphp.org/en/latest/).
 
 ## Install
 
@@ -14,7 +14,11 @@ $ composer require programarivm/money-pattern
 
 > The short answer: to reduce the attack surface of your app.
 
-`moneyphp/money` assumes that very huge amounts of money are going to be handled by default, considering that you are bypassing the limit established by `PHP_INT_MAX`. More specifically, the `Money` class internally picks [BC Math](http://php.net/manual/en/book.bc.php) or [GMP](http://php.net/manual/en/book.gmp.php) by default if detecting those PHP extensions, as it is shown next.
+`moneyphp/money` assumes that very huge amounts of money are going to be handled by default, considering that the limit established by [`PHP_INT_MAX`](http://php.net/manual/en/reserved.constants.php) is to be bypassed.
+
+> **PHP_INT_MAX** (integer). The largest integer supported in this build of PHP. Usually int(2147483647) in 32 bit systems and int(9223372036854775807) in 64 bit systems. Available since PHP 5.0.5
+
+More specifically, the `Money` class internally picks [BC Math](http://php.net/manual/en/book.bc.php) or [GMP](http://php.net/manual/en/book.gmp.php) by default if detecting those PHP extensions, as it is shown next.
 
 ### `src/Money.php`
 
@@ -68,7 +72,7 @@ final class Money implements \JsonSerializable
 }
 ```
 
-In short, BC Math and GMP are encouraged to be installed, however, arbitrary precision arithmetic functions should not be used in common web apps -- according to [the least privilege principle](https://programarivm.com/the-least-privilege-principle-applied-to-php-bigints/) those extensions should be installed only if necessary.
+In short, BC Math and GMP are encouraged to be installed. However, arbitrary precision arithmetic functions should not be used in common web apps -- according to [the least privilege principle](https://programarivm.com/the-least-privilege-principle-applied-to-php-bigints/) they should be installed only if necessary.
 
 ## License
 
