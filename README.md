@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/programarivm/money-pattern.svg?branch=master)](https://travis-ci.org/programarivm/money-pattern)
 
+![Money Pattern](/resources/logo.png?raw=true)
+
 This is a fork of [moneyphp/money](https://github.com/moneyphp/money) that removes the BC Math and GMP functions. The API remains the same as in the [official documentation](http://moneyphp.org/en/latest/).
 
 ## Install
